@@ -1,0 +1,9 @@
+---
+- name: Debug 'ansible_host' variable
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: Debug variable
+      ansible.builtin.debug:
+        var: ansible_host
