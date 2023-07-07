@@ -1,0 +1,14 @@
+- name: Run setup script
+  hosts: all
+  gather_facts: false
+  
+  tasks:
+    - name: Collect facts
+      ansible.builtin.setup:
+      register: all
+      delegate_to: localhost
+
+    - name: Debug facts
+      ansible.builtin.debug:
+        var: all
+      delegate_to: localhost
